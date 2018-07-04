@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@drawable/background</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.CustomFont" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/josefin_slab</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- Para statusBar transparent -->
+    <style
+        name="AppTheme.NoActionAndStatusBar"
+        parent="AppTheme.NoActionBar">
+
+        <item
+            name="android:windowTranslucentStatus"
+            tools:targetApi="kitkat">
+            true
+        </item>
+    </style>
+
+    <!-- Para rótulos da atividade de detalhes. -->
+    <style name="AppTheme.TextViewLabels">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingMultiplier">1.29</item>
+    </style>
+
+    <!-- Para conteúdos em texto da atividade de detalhes. -->
+    <style name="AppTheme.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:lineSpacingMultiplier">1.29</item>
+    </style>
+</resources>

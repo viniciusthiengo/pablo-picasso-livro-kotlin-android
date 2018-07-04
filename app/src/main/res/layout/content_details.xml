@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_painting"
+            android:layout_width="match_parent"
+            android:layout_height="282dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+
+        <TextView
+            android:id="@+id/tv_year_label"
+            style="@style/AppTheme.TextViewLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_painting"
+            android:layout_marginTop="8dp"
+            android:text="Ano:" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            style="@style/AppTheme.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_year_label"
+            android:layout_marginLeft="@dimen/left_margin_to_label"
+            android:layout_marginStart="@dimen/left_margin_to_label"
+            android:layout_toEndOf="@+id/tv_year_label"
+            android:layout_toRightOf="@+id/tv_year_label" />
+
+
+        <TextView
+            android:id="@+id/tv_price_label"
+            style="@style/AppTheme.TextViewLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_year_label"
+            android:layout_marginTop="@dimen/top_margin_to_label"
+            android:text="Valor de mercado:" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/AppTheme.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_price_label"
+            android:layout_marginLeft="@dimen/left_margin_to_label"
+            android:layout_marginStart="@dimen/left_margin_to_label"
+            android:layout_toEndOf="@+id/tv_price_label"
+            android:layout_toRightOf="@+id/tv_price_label" />
+
+
+        <TextView
+            android:id="@+id/tv_rating_label"
+            style="@style/AppTheme.TextViewLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_price_label"
+            android:layout_marginTop="@dimen/top_margin_to_label"
+            android:text="Avaliacão dos artistas contemporâneos:" />
+
+        <LinearLayout
+            android:id="@+id/ll_rating_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_rating_label"
+            android:layout_marginTop="@dimen/top_margin_to_label"
+            android:background="@drawable/rating_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/iv_star_01"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_white_24dp"
+                android:tint="@color/colorStarRating" />
+
+            <ImageView
+                android:id="@+id/iv_star_02"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_white_24dp"
+                android:tint="@color/colorStarRating" />
+
+            <ImageView
+                android:id="@+id/iv_star_03"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_white_24dp"
+                android:tint="@color/colorStarRating" />
+
+            <ImageView
+                android:id="@+id/iv_star_04"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_white_24dp"
+                android:tint="@color/colorStarRating" />
+
+            <ImageView
+                android:id="@+id/iv_star_05"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star_white_24dp"
+                android:tint="@color/colorStarRating" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_details_label"
+            style="@style/AppTheme.TextViewLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_rating_container"
+            android:layout_marginTop="8dp"
+            android:text="+ Detalhes:" />
+
+        <TextView
+            android:id="@+id/tv_details"
+            style="@style/AppTheme.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_details_label"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp" />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

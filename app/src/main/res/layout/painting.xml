@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_painting"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_gravity="top|start" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:background="#c000"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_name"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_year"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/iv_star_01"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/iv_star_02"
+            android:layout_toStartOf="@+id/iv_star_02"
+            android:tint="@color/colorStarRating" />
+
+        <ImageView
+            android:id="@+id/iv_star_02"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/iv_star_03"
+            android:layout_toStartOf="@+id/iv_star_03"
+            android:tint="@color/colorStarRating" />
+
+        <ImageView
+            android:id="@+id/iv_star_03"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/iv_star_04"
+            android:layout_toStartOf="@+id/iv_star_04"
+            android:tint="@color/colorStarRating" />
+
+        <ImageView
+            android:id="@+id/iv_star_04"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/iv_star_05"
+            android:layout_toStartOf="@+id/iv_star_05"
+            android:tint="@color/colorStarRating" />
+
+        <ImageView
+            android:id="@+id/iv_star_05"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:tint="@color/colorStarRating" />
+
+    </RelativeLayout>
+</FrameLayout>
