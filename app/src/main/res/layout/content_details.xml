@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_painting"
             android:layout_marginTop="8dp"
-            android:text="Ano:" />
+            android:text="@string/label_year" />
 
         <TextView
             android:id="@+id/tv_year"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_year_label"
             android:layout_marginTop="@dimen/top_margin_to_label"
-            android:text="Valor de mercado:" />
+            android:text="@string/label_price" />
 
         <TextView
             android:id="@+id/tv_price"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_price_label"
             android:layout_marginTop="@dimen/top_margin_to_label"
-            android:text="Avaliacão dos artistas contemporâneos:" />
+            android:text="@string/label_rating" />
 
         <LinearLayout
             android:id="@+id/ll_rating_container"
@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_rating_container"
             android:layout_marginTop="8dp"
-            android:text="+ Detalhes:" />
+            android:text="@string/label_details" />
 
         <TextView
             android:id="@+id/tv_details"

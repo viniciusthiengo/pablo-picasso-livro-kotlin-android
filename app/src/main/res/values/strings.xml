@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">Pablo Picasso</string>
     <string name="action_search">Buscar</string>
+    <string name="label_money_sign">R$</string>
+    <string name="label_millions">milhões</string>
+    <string name="label_year">Ano:</string>
+    <string name="label_price">Valor de mercado:</string>
+    <string name="label_rating">Avaliacão dos artistas contemporâneos:</string>
+    <string name="label_details">+ Detalhes:</string>
 </resources>

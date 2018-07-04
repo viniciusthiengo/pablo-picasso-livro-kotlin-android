@@ -9,7 +9,7 @@ class Database {
                 Painting(
                     "Painter and Model",
                     1928,
-                    "http://www.pablopicasso.org/images/paintings/painter-and-model.jpg",
+                    "https://www.pablopicasso.org/images/paintings/painter-and-model.jpg",
                     15.6,
                     4.0,
                     "Um artista vivo que Picasso sempre teve em vista era Matisse. Dado o tema de Painter e MOdel isso não é surpresa, e ele pode ter tido um Matisses em mente, o monumental Goldfish e Palette 1915. Isso começou como uma imagem do artista com sua paleta contemplando uma natureza morta em uma mesa, e a seção vertical central da composição de Picasso (incorporando o espelho, a janela, a natureza morta, a tela, a paleta e metade do corpo do pintor) tem tantos detalhes em comum com a pintura de Matisse que o termo \"paráfrase\" parece apropriado. Picasso conhecia bem Goldfish e Palette porque fora com Leonce Rosenberg de 1915 a 1923, quando, graças ao fervoroso lobby de ninguém menos do que Andre Breton, foi comprado por Jacques Doucet. Ele também sabia que, com ou sem razão, Matisse estava convencido de que havia influenciado seu próprio Arlequim de 1915."

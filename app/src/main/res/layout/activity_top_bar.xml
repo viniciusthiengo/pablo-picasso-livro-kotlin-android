@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Para que não tenhamos problemas de tamanho do AppBarLayout e do Toolbar,
+    temos de adicionar o atributo android:fitsSystemWindows="true" em ambos
+    os componentes visuais, isso para que possamos ter a imagem de background
+    na barra de topo do layout.
+-->
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_top_bar"
+    android:fitsSystemWindows="true"
+    android:theme="@style/AppTheme.AppBarOverlay">
+
+    <!--
+        android:layout_weight="1" é necessário aqui, pois caso contrário o
+        menu de topo (ícone de busca) e o título não ficarão posicionados
+        corretamente.
+    -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:titleTextAppearance="@style/AppTheme.CustomFont" />
+</android.support.design.widget.AppBarLayout>

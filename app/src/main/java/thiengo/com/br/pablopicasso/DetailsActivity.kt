@@ -1,27 +1,27 @@
 package thiengo.com.br.pablopicasso
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-
-import thiengo.com.br.pablopicasso.domain.Painting
-import android.util.Log
-import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_details.*
+import kotlinx.android.synthetic.main.activity_top_bar.*
 import kotlinx.android.synthetic.main.content_details.*
+import thiengo.com.br.pablopicasso.domain.Painting
+import thiengo.com.br.pablopicasso.domain.TargetImage
 import thiengo.com.br.pablopicasso.extension.setStar
-import java.lang.Exception
 
 
 class DetailsActivity : MainActivity() {
 
     lateinit var painting: Painting
+    lateinit var target: TargetImage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         setSupportActionBar(toolbar)
+        /*
+         * Para apresentar na barra de topo a seta de "volta a
+         * atividade anterior"
+         * */
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setAppBarHeight()
@@ -37,18 +37,31 @@ class DetailsActivity : MainActivity() {
             .get()
             .setIndicatorsEnabled(true)*/
 
+        /*
+         * Target é uma referência fraca (WikiPreference), então é preiso
+         * colocar um objeto deste tipo sendo referenciado de maneira forte,
+         * via variável ou propriedade, por exemplo.
+         * */
+        target = TargetImage(
+            iv_painting,
+            painting.imageUrl,
+            false // Não está em lista.
+        )
+
         // Colocando a pintura.
         Picasso
             .get()
             .load(painting.imageUrl)
-            .centerInside()
-            .fit()
-            .into(iv_painting)
+            .error(R.drawable.error_in_details)
+            .into( target )
 
         // Colocando os dados em texto.
         iv_painting.contentDescription = painting.name
         tv_year.text = painting.year.toString()
-        tv_price.text = painting.getPriceBRFormat()
+        tv_price.text = painting.getPriceBRFormat(
+            getString(R.string.label_money_sign),
+            getString(R.string.label_millions)
+        )
         tv_details.text = painting.details
 
         // Colocando as estrelas.
@@ -76,9 +89,18 @@ class DetailsActivity : MainActivity() {
     override fun onPause() {
         super.onPause()
         if( isFinishing ){
+
+            /*
+             * Cancele tanto as requisições ocorrendo no ImageView
+             * desta atividade quanto no objeto Target utilizado
+             * aqui.
+             * */
             Picasso
                 .get()
                 .cancelTag(iv_painting)
+            Picasso
+                .get()
+                .cancelTag( target )
         }
     }
 }

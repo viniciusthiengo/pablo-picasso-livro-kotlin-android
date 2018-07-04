@@ -5,28 +5,33 @@ import android.os.Parcelable
 import java.util.*
 
 class Painting(
-        val name: String,
-        val year: Int,
-        val imageUrl: String,
-        val priceInMillions: Double,
-        val rating: Double,
-        val details: String) : Parcelable {
+    val name: String,
+    val year: Int,
+    val imageUrl: String,
+    val priceInMillions: Double,
+    val rating: Double,
+    val details: String ) : Parcelable {
 
-    fun getPriceBRFormat(): String =
+    fun getPriceBRFormat(
+        moneySignLabel: String,
+        millionsLabel: String ): String =
+
         String
             .format(
                 Locale.GERMANY,
-                "R\$ %.1f milhões",
-                priceInMillions
+                "%s %.1f %s",
+                moneySignLabel,
+                priceInMillions,
+                millionsLabel
             )
 
     constructor(source: Parcel) : this(
-            source.readString(),
-            source.readInt(),
-            source.readString(),
-            source.readDouble(),
-            source.readDouble(),
-            source.readString()
+        source.readString(),
+        source.readInt(),
+        source.readString(),
+        source.readDouble(),
+        source.readDouble(),
+        source.readString()
     )
 
     override fun describeContents() = 0
@@ -41,6 +46,11 @@ class Painting(
     }
 
     companion object {
+        /*
+         * Constante criada para ser utilizada como chave de envio na
+         * transferência de um objeto Painting da atividade PaitingsActivity
+         * para a atividade DetailsActivity.
+         * */
         @JvmField
         val KEY = "painting_key"
 

@@ -3,7 +3,6 @@ package thiengo.com.br.pablopicasso.extension
 import android.widget.ImageView
 import thiengo.com.br.pablopicasso.R
 
-
 /*
  * Extensão realizada, pois o mesmo algoritmo, vinculado
  * somente aos ImageViews do projeto, terá de ser utilizado

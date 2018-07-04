@@ -1,20 +1,12 @@
 package thiengo.com.br.pablopicasso
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
-import android.view.MenuItem
-
-import kotlinx.android.synthetic.main.activity_paintings.*
-import thiengo.com.br.pablopicasso.domain.Painting
-import android.view.ViewGroup
-import android.support.design.widget.CoordinatorLayout
-import android.support.design.widget.AppBarLayout
-import android.util.Log
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_paintings.*
+import kotlinx.android.synthetic.main.activity_top_bar.*
 import thiengo.com.br.pablopicasso.data.Database
 
 
@@ -26,8 +18,20 @@ class PaintingsActivity : MainActivity() {
         setSupportActionBar(toolbar)
 
         setAppBarHeight()
-
         initRecyclerView()
+    }
+
+    /*
+     * Seguindo recomendações encontradas nos códigos de exemplo da
+     * documentação oficial da Picasso API. Para que invocações que
+     * ocorrem em classes adaptadoras sejam removidas quando não
+     * houver mais a necessidade de carregamento de imagens, coloque
+     * no onDestroy() da atividade / fragmento o código de cancelamento
+     * de requisição.
+     * */
+    override fun onDestroy() {
+        super.onDestroy()
+        Picasso.get().cancelTag(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

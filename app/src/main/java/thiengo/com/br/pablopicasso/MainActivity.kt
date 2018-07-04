@@ -1,51 +1,53 @@
 package thiengo.com.br.pablopicasso
 
-import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.view.Menu
-import android.view.MenuItem
-
-import kotlinx.android.synthetic.main.activity_paintings.*
-import thiengo.com.br.pablopicasso.domain.Painting
-import android.view.ViewGroup
 import android.support.design.widget.CoordinatorLayout
-import android.support.design.widget.AppBarLayout
-import android.util.Log
-import thiengo.com.br.pablopicasso.data.Database
+import android.support.v7.app.AppCompatActivity
+import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_top_bar.*
 
-
+/*
+ * A MainActivity contém métodos comuns em mais de uma atividade do
+ * projeto, ou seja, ela será a atividade pai dessas outras atividades,
+ * por isso a definição open e também a não necessidade de defini-la
+ * no AndroidManifest.xml do projeto.
+ * */
 open class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     fun setAppBarHeight() {
-        val size = dpToPx(56)
-        app_bar.setLayoutParams(
-            CoordinatorLayout.LayoutParams(
+        // Toolbar é sempre 56dp de altura, no Android.
+        val heightToolbar = dpToPixel(56)
+
+        val heightTopBar = getStatusBarHeight() + heightToolbar
+        val layoutParams = CoordinatorLayout
+            .LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-        getStatusBarHeight() + dpToPx(56) // Toolbar é sempre 56dp, no Android.
+                heightTopBar
             )
-        )
+
+        app_bar.setLayoutParams( layoutParams )
     }
 
+    /*
+     * O algoritmo abaixo é necessário, pois o tamanho do statusBar em
+     * aparelhos Android pode variar.
+     * */
     private fun getStatusBarHeight(): Int {
         var result = 0
-        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        val resourceId = resources
+            .getIdentifier(
+                "status_bar_height",
+                "dimen",
+                "android"
+            )
+
         if (resourceId > 0) {
             result = resources.getDimensionPixelSize(resourceId)
         }
         return result
     }
 
-    private fun dpToPx(dp: Int): Int {
-        val density = resources
-                .displayMetrics
-                .density
-        return Math.round(dp.toFloat() * density)
+    private fun dpToPixel(dp: Int): Int {
+        val density = resources.displayMetrics.density
+        return Math.round( dp.toFloat() * density )
     }
 }

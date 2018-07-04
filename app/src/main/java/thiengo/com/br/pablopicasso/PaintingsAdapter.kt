@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import thiengo.com.br.pablopicasso.domain.Painting
+import thiengo.com.br.pablopicasso.domain.TargetImage
 import thiengo.com.br.pablopicasso.extension.setStar
 
 class PaintingsAdapter(
@@ -18,8 +19,8 @@ class PaintingsAdapter(
         RecyclerView.Adapter<PaintingsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int ) : PaintingsAdapter.ViewHolder {
+        parent: ViewGroup,
+        viewType: Int ) : PaintingsAdapter.ViewHolder {
 
         val v = LayoutInflater
                 .from(context)
@@ -28,8 +29,8 @@ class PaintingsAdapter(
     }
 
     override fun onBindViewHolder(
-            holder: ViewHolder,
-            position: Int ) {
+        holder: ViewHolder,
+        position: Int ) {
 
         holder.setData( paintings[position] )
     }
@@ -68,19 +69,37 @@ class PaintingsAdapter(
         }
 
         fun setData( painting: Painting ) {
+            /*
+             * Target é uma referência fraca (WikiPreference), então é preiso
+             * colocar um objeto deste tipo sendo referenciado de maneira forte,
+             * via variável ou propriedade, por exemplo.
+             * */
+            val target = TargetImage(
+                ivPainting,
+                painting.imageUrl
+            )
+
+            /*
+             * Hackcode para que a instância de Target não seja perdida. Aqui
+             * estamos criando uma referência forte a ela.
+             * */
+            ivPainting.tag = target
+
             // Colocando a pintura.
             Picasso
                 .get()
                 .load(painting.imageUrl)
-                .centerCrop()
-                .fit()
-                .into(ivPainting)
+                .error(R.drawable.error_in_list)
+                .into(target)
 
             // Colocando os dados em texto.
             ivPainting.contentDescription = painting.name
             tvName.text = painting.name
             tvYear.text = painting.year.toString()
-            tvPrice.text = painting.getPriceBRFormat()
+            tvPrice.text = painting.getPriceBRFormat(
+                context.getString(R.string.label_money_sign),
+                context.getString(R.string.label_millions)
+            )
 
             // Colocando as estrelas.
             ivStar_01.setStar(painting.rating, 1)
