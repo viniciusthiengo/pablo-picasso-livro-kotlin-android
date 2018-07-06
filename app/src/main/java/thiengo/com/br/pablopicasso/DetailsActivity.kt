@@ -97,10 +97,10 @@ class DetailsActivity : MainActivity() {
              * */
             Picasso
                 .get()
-                .cancelTag(iv_painting)
+                .cancelRequest(iv_painting)
             Picasso
                 .get()
-                .cancelTag( target )
+                .cancelRequest( target )
         }
     }
 }

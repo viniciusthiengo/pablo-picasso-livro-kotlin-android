@@ -24,6 +24,10 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/iv_star_01"
+            android:layout_toStartOf="@+id/iv_star_01"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textColor="@android:color/white"
             android:textSize="17sp"
             android:textStyle="bold" />
