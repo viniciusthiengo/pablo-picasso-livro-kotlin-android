@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start|bottom"
-        android:background="#c000"
+        android:background="@color/colorBackgroundInfoItem"
         android:padding="12dp">
 
         <TextView

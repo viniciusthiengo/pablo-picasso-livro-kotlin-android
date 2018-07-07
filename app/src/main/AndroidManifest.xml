@@ -27,12 +27,12 @@
 
         <activity
             android:name=".DetailsActivity"
-            android:parentActivityName=".DetailsActivity"
+            android:parentActivityName=".PaintingsActivity"
             android:theme="@style/AppTheme.NoActionAndStatusBar">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="thiengo.com.br.pablopicasso.DetailsActivity" />
+                android:value="thiengo.com.br.pablopicasso.PaintingsActivity" />
         </activity>
     </application>
 
