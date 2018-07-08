@@ -1,7 +1,6 @@
 package thiengo.com.br.pablopicasso
 
 import android.os.Bundle
-import android.view.MenuItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_top_bar.*
 import kotlinx.android.synthetic.main.content_details.*
