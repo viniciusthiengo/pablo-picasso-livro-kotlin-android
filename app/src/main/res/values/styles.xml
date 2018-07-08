@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
+    <!-- Tema padrão, aplicado em todo o projeto. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/background</item>
 
@@ -9,24 +10,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
+    <!-- Para o correto enquadramento do AppBarLayout. -->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <!-- Para permitir que o Toolbar fique enquadrado corretamente no AppBarLayout. -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Para uso de fonte customizada no título do Toolbar. -->
     <style name="AppTheme.CustomFont" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/josefin_slab</item>
         <item name="android:textSize">26sp</item>
     </style>
 
-    <!-- Para statusBar transparent -->
+    <!-- Para o statusBar ficar transparente. -->
     <style
-        name="AppTheme.NoActionAndStatusBar"
-        parent="AppTheme.NoActionBar">
+        name="AppTheme.NoActionAndStatusBar">
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
 
         <item
             name="android:windowTranslucentStatus"
@@ -35,14 +36,14 @@
         </item>
     </style>
 
-    <!-- Para rótulos da atividade de detalhes. -->
+    <!-- Para os rótulos dos conteúdos em texto da atividade de detalhes. -->
     <style name="AppTheme.TextViewLabels">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingMultiplier">1.29</item>
     </style>
 
-    <!-- Para conteúdos em texto da atividade de detalhes. -->
+    <!-- Para os conteúdos em texto da atividade de detalhes. -->
     <style name="AppTheme.TextView">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:lineSpacingMultiplier">1.29</item>

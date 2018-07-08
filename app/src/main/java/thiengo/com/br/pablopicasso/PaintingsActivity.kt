@@ -17,8 +17,27 @@ class PaintingsActivity : MainActivity() {
         setContentView(R.layout.activity_paintings)
         setSupportActionBar(toolbar)
 
+        // Iniciando a barra de topo personalizada.
         setAppBarHeight()
+
         initRecyclerView()
+    }
+
+    /*
+     * Código de configuração inicial do RecyclerView que será
+     * utilizado em projeto, incluindo a linha divisora de itens,
+     * criada via DividerItemDecoration.
+     * */
+    private fun initRecyclerView(){
+
+        rv_paintings.setHasFixedSize(true)
+        val layoutManager = LinearLayoutManager(this)
+        rv_paintings.layoutManager = layoutManager
+
+        val divider = DividerItemDecoration(this, layoutManager.orientation)
+        rv_paintings.addItemDecoration(divider)
+
+        rv_paintings.adapter = PaintingsAdapter(this, Database.getPaintings() )
     }
 
     /*
@@ -34,20 +53,13 @@ class PaintingsActivity : MainActivity() {
         Picasso.get().cancelTag(this)
     }
 
+    /*
+     * Está aqui neste exemplo somente para que seja possível inflar o
+     * menu que contém o ícone de busca, mas este ícone é apenas um
+     * atributo de layout, não terá funcionalidade.
+     * */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_paintings, menu)
         return true
-    }
-
-    private fun initRecyclerView(){
-
-        rv_paintings.setHasFixedSize(true)
-        val layoutManager = LinearLayoutManager(this)
-        rv_paintings.layoutManager = layoutManager
-
-        val divider = DividerItemDecoration(this, layoutManager.orientation)
-        rv_paintings.addItemDecoration(divider)
-
-        rv_paintings.adapter = PaintingsAdapter(this, Database.getPaintings() )
     }
 }

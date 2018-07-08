@@ -1,5 +1,7 @@
 package thiengo.com.br.pablopicasso
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.design.widget.CoordinatorLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
@@ -46,6 +48,10 @@ open class MainActivity : AppCompatActivity() {
         return result
     }
 
+    /*
+     * Método responsável por converter um número inteiro bruto
+     * (representando os DPs) para o equivalente em pixels.
+     * */
     private fun dpToPixel(dp: Int): Int {
         val density = resources.displayMetrics.density
         return Math.round( dp.toFloat() * density )

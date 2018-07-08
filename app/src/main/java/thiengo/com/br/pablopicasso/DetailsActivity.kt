@@ -1,6 +1,7 @@
 package thiengo.com.br.pablopicasso
 
 import android.os.Bundle
+import android.view.MenuItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_top_bar.*
 import kotlinx.android.synthetic.main.content_details.*
@@ -38,21 +39,20 @@ class DetailsActivity : MainActivity() {
             .setIndicatorsEnabled(true)*/
 
         /*
-         * Target é uma referência fraca (WikiPreference), então é preiso
-         * colocar um objeto deste tipo sendo referenciado de maneira forte,
-         * via variável ou propriedade, por exemplo.
-         * */
+		 * Target é uma referência fraca (WikiPreference), então é preciso
+		 * colocar um objeto deste tipo sendo referenciado de maneira forte,
+		 * via variável ou propriedade, por exemplo.
+		 * */
         target = TargetImage(
             iv_painting,
             painting.imageUrl,
-            false // Não está em lista.
+            false // Não estamos em contexto de lista.
         )
 
         // Colocando a pintura.
         Picasso
             .get()
             .load(painting.imageUrl)
-            .error(R.drawable.error_in_details)
             .into( target )
 
         // Colocando os dados em texto.

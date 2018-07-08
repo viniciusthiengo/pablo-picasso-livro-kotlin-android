@@ -70,9 +70,8 @@ class PaintingsAdapter(
 
         fun setData( painting: Painting ) {
             /*
-             * Target é uma referência fraca (WikiPreference), então é preiso
-             * colocar um objeto deste tipo sendo referenciado de maneira forte,
-             * via variável ou propriedade, por exemplo.
+             * Para posteriormente criarmos uma referência forte a instância
+             * de Target, colocamos ela em uma variável.
              * */
             val target = TargetImage(
                 ivPainting,
@@ -89,7 +88,6 @@ class PaintingsAdapter(
             Picasso
                 .get()
                 .load(painting.imageUrl)
-                .error(R.drawable.error_in_list)
                 .into(target)
 
             // Colocando os dados em texto.

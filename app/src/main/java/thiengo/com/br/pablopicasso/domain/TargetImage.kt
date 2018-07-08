@@ -17,13 +17,13 @@ class TargetImage(
 
     /*
      * Em caso de falha de carregamento de imagem, tentamos alterar
-     * o protocolo dela, saindo de um sem SSL, HTTP, e indo para um
-     * com SSL, HTTPS. Ou vice-versa. Essa é a única tentativa extra
+     * o protocolo dela, saindo de um com TSL, HTTPS, e indo para um
+     * sem TSL, HTTP. Ou vice-versa. Essa é a única tentativa extra
      * que nos resta, se mesmo assim a imagem não for carregada,
-     * apresentamos a imagem de erro. Fico tranquilo, o objeto Target
+     * apresentamos a imagem de erro. Fique tranquilo, o objeto Target
      * somente será utilizado se invocado novamente, ou seja, não
-     * temos o risco aqui de entrarmos em loop inifinito, pois a nova
-     * invocação de Picasso.get() não há referência a algum Target.
+     * temos o risco aqui de entrarmos em loop infinito, pois a nova
+     * invocação de Picasso.get() não tem referência a algum Target.
      * */
     override fun onBitmapFailed(
         e: Exception?,
@@ -41,9 +41,9 @@ class TargetImage(
      * Se a imagem tiver sido carregada sem problemas, invocamos o
      * Picasso agora com fit() e centerInside(), isso para ajustar a
      * imagem no ImageView, pois com o Target não é possível trabalhar
-     * com esses métodos (o fit() não). Não risco de loop inifinito
+     * com esses métodos (o fit() não). Não há risco de loop inifinito
      * aqui, pois não estamos utilizando novamente uma instância de
-     * TargetImage. A imagem já estará em cache, também não haverá
+     * TargetImage. A imagem já estará em cache, ou seja, não haverá
      * um novo carregamento remoto.
      * */
     override fun onBitmapLoaded(

@@ -51,8 +51,7 @@ class Painting(
          * transferência de um objeto Painting da atividade PaitingsActivity
          * para a atividade DetailsActivity.
          * */
-        @JvmField
-        val KEY = "painting_key"
+        const val KEY = "painting_key"
 
         @JvmField
         val CREATOR: Parcelable.Creator<Painting> = object : Parcelable.Creator<Painting> {
