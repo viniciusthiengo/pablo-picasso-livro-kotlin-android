@@ -6,7 +6,6 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import thiengo.com.br.pablopicasso.R
-import java.lang.Exception
 
 class TargetImage(
     val imageView: ImageView,
@@ -39,9 +38,9 @@ class TargetImage(
 
     /*
      * Se a imagem tiver sido carregada sem problemas, invocamos o
-     * Picasso agora com fit() e centerInside(), isso para ajustar a
+     * Picasso agora com fit() e centerInside() ou centerCrop(), isso para ajustar a
      * imagem no ImageView, pois com o Target não é possível trabalhar
-     * com esses métodos (o fit() não). Não há risco de loop inifinito
+     * com esses métodos (o fit() não). Não há risco de loop infinito
      * aqui, pois não estamos utilizando novamente uma instância de
      * TargetImage. A imagem já estará em cache, ou seja, não haverá
      * um novo carregamento remoto.

@@ -19,13 +19,15 @@ class DetailsActivity : MainActivity() {
         setContentView(R.layout.activity_details)
         setSupportActionBar(toolbar)
         /*
-         * Para apresentar na barra de topo a seta de "volta a
+         * Para apresentar na barra de topo a seta de "voltar a
          * atividade anterior"
          * */
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // Iniciando a barra de topo personalizada.
         setAppBarHeight()
 
+        // Obtendo o objeto Painting enviado via Intent.
         painting = intent.getParcelableExtra(Painting.KEY)
 
         /*
@@ -72,7 +74,7 @@ class DetailsActivity : MainActivity() {
     }
 
     /*
-     * Para que a atualização do título da Toolbar seja
+     * Para que a atualização do título do Toolbar seja
      * efetivo.
      */
     override fun onResume() {
@@ -82,7 +84,7 @@ class DetailsActivity : MainActivity() {
 
     /*
      * Seguindo as recomendações da documentação e garantindo
-     * de nenhuma requisição permanecerá, retendo a atividade
+     * que nenhuma requisição permanecerá, retendo a atividade
      * em memória para não ser recolhida pelo Garbage Collector.
      * */
     override fun onPause() {

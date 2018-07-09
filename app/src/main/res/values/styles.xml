@@ -13,7 +13,11 @@
     <!-- Para o correto enquadramento do AppBarLayout. -->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <!-- Para permitir que o Toolbar fique enquadrado corretamente no AppBarLayout. -->
+    <!--
+        Utilizado para a correta apresentação de menus de pop-up. Apesar de
+        não utilizarmos menus de topo aqui, vamos continuar com este tema, pois
+        é algo comum em qualquer componente Toolbar quando em layout.
+    -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Para uso de fonte customizada no título do Toolbar. -->
