@@ -1,4 +1,4 @@
-# Questions? (Kotlin Android)
+# Pablo Picasso (Kotlin Android)
 
 Projeto Kotlin Android do livro "Desenvolvedor Kotlin Android - Bibliotecas para o dia a dia".
 
